@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta type ="viewport" content="width=device-width, initial-scale=1">
+	<title>Обратные числа</title>
+</head>
+<body>
+
+<input type="text" class="textf" name="color">Число<br>
+
+<input  type="text" class="textf4" name="color">Модуль<br>
+<input type="button" name = "color_ok" value = "ok" onclick="shifr()"><br>
+<input  type= "text" class ="res" name ="color">
+
+<script type="text/javascript">
+	function shifr(argument) {
+		var first = document.querySelector(".textf").value;
+		document.querySelector(".textf").value="";
+		var mod = document.querySelector(".textf4").value;
+		var flag1 = true;
+		document.querySelector(".textf4").value="";
+		for (var i = 2;i <= mod;i++){
+			if(mod % i == 0 && first % i == 0){
+				flag1 = false;
+				console.log(i);
+			}
+		}
+		var res = 0;
+		if (!flag1){
+			alert("Не взаимо простые");
+		}
+		if (flag1){
+			for(var i = 1;i <= mod;i++){
+				if ((first*i)%mod==1){
+					res = i;
+				}
+			}
+		}
+		document.querySelector(".res").value=res;
+	}
+	
+</script>
+</body>
+</html>
